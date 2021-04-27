@@ -6,20 +6,39 @@ require '../vendor/autoload.php';
 
 use App\Shield;
 use App\Weapon;
-use App\Fighter;
+use App\Hero;
+use App\Monster;
+use App\Arena;
 
-$heracles = new Fighter('Heracles', 20, 6, 'heracles.svg');
-$bird1 = new Fighter('Bird', 25, 12, 'bird.svg');
-$bird2 = new Fighter('Bird', 25, 12, 'bird.svg');
-$bird3 = new Fighter('Bird', 25, 12, 'bird.svg');
+$heracles = new Hero('Heracles', 20, 6, 'heracles.svg');
+$bird1 = new Monster('Bird', 25, 12, 'bird.svg');
+$bird2 = new Monster('Bird', 25, 12, 'bird.svg');
+$bird3 = new Monster('Bird', 25, 12, 'bird.svg');
+$birds = [$bird1, $bird2, $bird3,];
 
-
-$sword = new Weapon();
-$heracles->setWeapon($sword);
+// $sword = new Weapon();
+// $heracles->setWeapon($sword);
 
 $shield = new Shield();
 $heracles->setShield($shield);
 
+
+
+$arena = new Arena ($heracles, $birds);
+$heracles->setX(2);
+$heracles->setY(2);
+$bird1->setX(3);
+$bird1->setY(1);
+$bird2->setX(3);
+$bird2->setY(5);
+$bird3->setX(2);
+$bird3->setY(4);
+
+$bow = new Weapon();
+$bow->setRange(5);
+$bow->setDamage(8);
+$bow->setImage('bow.svg');
+$heracles->setWeapon($bow);
 
 /** FIN DE LA ZONE A MODIFIER **/
 /** ⛔ Ne pas modifier en dessous ⛔ **/

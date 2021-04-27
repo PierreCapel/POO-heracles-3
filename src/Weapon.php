@@ -6,7 +6,18 @@ class Weapon
 {
     private int $damage = 10;
 
+    private float $range = 0.5;
+
     private string $image = 'sword.svg';
+    
+    public function getRange(): float
+    {
+        return $this->range;
+    }
+    public function setRange($range)
+    {
+        $this->range = $range;
+    }
 
     public function getDamage(): int
     {
